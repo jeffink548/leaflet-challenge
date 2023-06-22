@@ -46,7 +46,7 @@ d3.json('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_day.geojs
     var div = L.DomUtil.create('div', 'legend');
     var labels = ['<strong>Depth Legend</strong>'];
     var depths = [0, 10, 30, 50, 70, 90];
-    var colors = ['#fee5d9', '#fcae91', '#fb6a4a', '#de2d26', '#a50f15', '#67000d'];
+    var colors = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b'];
 
     for (var i = 0; i < depths.length; i++) {
       var label = depths[i] + (depths[i + 1] ? '&ndash;' + depths[i + 1] + ' km' : '+ km');
@@ -63,16 +63,16 @@ d3.json('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_day.geojs
 // Function to determine marker color based on depth
 function getColor(depth) {
   if (depth < 10) {
-    return '#fee5d9';
+    return '#1f77b4';
   } else if (depth < 30) {
-    return '#fcae91';
+    return '#ff7f0e';
   } else if (depth < 50) {
-    return '#fb6a4a';
+    return '#2ca02c';
   } else if (depth < 70) {
-    return '#de2d26';
+    return '#d62728';
   } else if (depth < 90) {
-    return '#a50f15';
+    return '#9467bd';
   } else {
-    return '#67000d';
+    return '#8c564b';
   }
 }
